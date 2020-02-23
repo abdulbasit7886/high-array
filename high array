@@ -1,0 +1,58 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+class higharray{
+private:
+	vector<double> v;
+	int nelement;
+public:
+	higharray(){
+		nelement = 0;
+	}
+	higharray(int max){
+		nelement = 0;
+		v.resize(max);
+	}
+	bool find(double search){
+		int j;
+		for (j = 0; j < nelement; j++){
+			if (v[j] == search)
+				break;
+			if (j == nelement){
+				return true;
+			}
+			else
+				return false;
+			}
+
+		}
+	bool remove(double value){
+		int j;
+		for (int j = 0; j < nelement; j++){
+			if (v[j] == value)
+				break;
+			if (j == nelement)
+				return false;
+			else
+			for (int k = j; k < nelement; k++)
+				v[k] = v[k + 1];
+			nelement--;
+			return true;
+		}
+		void dispaly(){
+			for (int j = 0; j < nelement; j++){
+				cout << v[j] << endl;
+			}
+		}
+			void insert(double value){
+				v[nelement] = value;
+				nelement++;
+
+			}
+};
+int main(){
+	int maxsize = 100;
+	higharray arr(maxsize);
+	arr.
+
+}
